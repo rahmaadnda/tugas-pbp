@@ -1,0 +1,112 @@
+[
+    {
+        "model": "mywatchlist.filmwatchlist",
+        "pk": 1,
+        "fields":{
+            "watched": true,
+            "title": "Summer Ghost",
+            "rating": 4.5,
+            "release_date": "2021-11-12",
+            "review": "Menarik, deep meaning-nya tersampaikan walaupun cuma 40 menit."
+        }
+    },
+    {
+        "model": "mywatchlist.filmwatchlist",
+        "pk": 2,
+        "fields":{
+            "watched": false,
+            "title": "Inception",
+            "rating": 4.5,
+            "release_date": "2010-07-16",
+            "review": "Rekomendasi dari teman, alurnya cukup membingungkan jadi butuh waktu yang cukup buat mencerna keseluruhan film. Overall good."
+        }
+    },
+    {
+        "model": "mywatchlist.filmwatchlist",
+        "pk": 3,
+        "fields":{
+            "watched": false,
+            "title": "500 Days of Summer",
+            "rating": 4.5,
+            "release_date": "2009-07-17",
+            "review": "Rekomendasi dari teman juga, hubungan yang terjadi di film itu cukup menyadarkan penonton kalau ada yang namanya cinta bertepuk sebelah tangan dan jangan kegeeran, katanya."
+        }
+    },
+    {
+        "model": "mywatchlist.filmwatchlist",
+        "pk": 4,
+        "fields":{
+            "watched": true,
+            "title": "Howl's Moving Castle",
+            "rating": 5,
+            "release_date": "2004-11-20",
+            "review": "Tipikal film fantasi ghibli, animasinya keren. Alurnya menarik walaupun butuh waktu buat paham."
+        }
+    },
+    {
+        "model": "mywatchlist.filmwatchlist",
+        "pk": 5,
+        "fields":{
+            "watched": false,
+            "title": "Enola Holmes",
+            "rating": 4.8,
+            "release_date": "2020-09-23",
+            "review": "Rekomendasi dari teman, outfit-nya cantik, ceritanya misteri tapi ga bikin pusing."
+        }
+    },
+    {
+        "model": "mywatchlist.filmwatchlist",
+        "pk": 6,
+        "fields":{
+            "watched": true,
+            "title": "The Wind Rises",
+            "rating": 4.8,
+            "release_date": "2013-07-20",
+            "review": "Bercerita tentang laki-laki yang pengen jadi pilot tapi gabisa dan perempuan yang sakit. Plotnya menarik, the main characters show how much they care for each other."
+        }
+    },
+    {
+        "model": "mywatchlist.filmwatchlist",
+        "pk": 7,
+        "fields":{
+            "watched": true,
+            "title": "Whisper of the Heart",
+            "rating": 4.8,
+            "release_date": "2017-09-12",
+            "review": "Bercerita tentang remaja yang sama-sama lagi berjuang buat menentukan dan mengejar masa depan, gemes."
+        }
+    },
+    {
+        "model": "mywatchlist.filmwatchlist",
+        "pk": 8,
+        "fields":{
+            "watched": true,
+            "title": "Ride Your Wave",
+            "rating": 5,
+            "release_date": "2019-06-21",
+            "review": "Tipikal anime roman tapi sedih, plotnya bagus dan meaningful."
+        }
+    },
+    {
+        "model": "mywatchlist.filmwatchlist",
+        "pk": 9,
+        "fields":{
+            "watched": false,
+            "title":"King Arthur: Legend of the Sword",
+            "rating": 5,
+            "release_date": "2017-05-09",
+            "review": "Rekomendasi dari teman juga, alur ceritanya menarik dan backsound-nya selalu bikin greget, katanya."
+        }
+    },
+    {
+        "model": "mywatchlist.filmwatchlist",
+        "pk": 10,
+        "fields":{
+            "watched": true,
+            "title": "Josee, the Tiger and the Fish",
+            "rating": 5,
+            "release_date": "2021-05-19",
+            "review": "Art-nya keren, alur menarik, bercerita tentang gimana pemeran utamanya saling ngedukung buat sama-sama bangkit."
+        }
+    }
+]
