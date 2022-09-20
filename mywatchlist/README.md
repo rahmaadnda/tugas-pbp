@@ -3,9 +3,14 @@
  <hr>
  
 #### Perbedaan antara JSON, XML, dan HTML
-- JSON
-- HTML
-- XML
+- JSON <br>
+JSON adalah singkatan dari JavaScript Object Notation. Dari namanya sendiri, pengembangan JSON dilakukan menggunakan bahasa seperti JavaScript, bukan _markup language_ seperti HTML ataupun XML. JSON digunakan untuk merepresentasikan data dalam pasangan _key-value_ yang dapat dikonversi ke atau dari JavaScript secara mudah. JSON juga secara umum lebih cepat dan mudah daripada XML
+
+- HTML <br>
+HTML: HyperText Markup Language. The markup (formatting) language for the web.
+
+- XML <br>
+XML: eXtensible Markup Language.
 
 #### Alasan diperlukan _data delivery_ dalam pengimplementasian sebuah platform
 
@@ -40,5 +45,5 @@
 - Melakukan deployment ke Heroku terhadap aplikasi yang sudah dibuat. <br>
 Setelah `add`, `commit`, dan `push` perubahan yang dilakukan ke github, membuat aplikasi baru di Heroku dan menambahkan variabel `repository secret` ke repositori github dengan format: <br>
 HEROKU_API_KEY: <VALUE_API_KEY> dan <br>
-HEROKU_APP_NAME: <NAMA_APLIKASI_HEROKU>, dalam hal ini adalah `watchlist-pbp` <br>
+HEROKU_APP_NAME: <NAMA_APLIKASI_HEROKU>, dalam hal ini adalah `pbp-assignment` <br>
 _Deployment_ akan berhasil dilakukan setelah _workflow_ yang gagal dijalankan kembali.
