@@ -1,8 +1,11 @@
-[Aplikasi Heroku](https://watchlist-pbp.herokuapp.com/) <br>
---> [My Watch List](https://watchlist-pbp.herokuapp.com/mywatchlist/)
+[Aplikasi Heroku](https://pbp-assignment.herokuapp.com/) <br>
+--> [My Watch List](https://pbp-assignment.herokuapp.com/mywatchlist/)
  <hr>
  
 #### Perbedaan antara JSON, XML, dan HTML
+- JSON
+- HTML
+- XML
 
 #### Alasan diperlukan _data delivery_ dalam pengimplementasian sebuah platform
 
