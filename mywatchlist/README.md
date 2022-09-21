@@ -47,3 +47,11 @@ Setelah `add`, `commit`, dan `push` perubahan yang dilakukan ke github, membuat 
 HEROKU_API_KEY: <VALUE_API_KEY> dan <br>
 HEROKU_APP_NAME: <NAMA_APLIKASI_HEROKU>, dalam hal ini adalah `pbp-assignment` <br>
 _Deployment_ akan berhasil dilakukan setelah _workflow_ yang gagal dijalankan kembali.
+
+#### Postman
+- HTML
+![HTML](https://github.com/rahmaadnda/tugas-pbp/blob/main/Tugas%203%20-%20HTML%20Postman.jpg)
+- XML
+~[XML](https://github.com/rahmaadnda/tugas-pbp/blob/main/Tugas%203%20-%20XML%20Postman.jpg)
+- JSON
+![JSON](https://github.com/rahmaadnda/tugas-pbp/blob/main/Tugas%203%20-%20JSON%20Postman.jpg)
