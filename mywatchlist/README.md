@@ -52,6 +52,6 @@ _Deployment_ akan berhasil dilakukan setelah _workflow_ yang gagal dijalankan ke
 - HTML
 ![HTML](https://github.com/rahmaadnda/tugas-pbp/blob/main/Tugas%203%20-%20HTML%20Postman.jpg)
 - XML
-~[XML](https://github.com/rahmaadnda/tugas-pbp/blob/main/Tugas%203%20-%20XML%20Postman.jpg)
+![XML](https://github.com/rahmaadnda/tugas-pbp/blob/main/Tugas%203%20-%20XML%20Postman.jpg)
 - JSON
 ![JSON](https://github.com/rahmaadnda/tugas-pbp/blob/main/Tugas%203%20-%20JSON%20Postman.jpg)
