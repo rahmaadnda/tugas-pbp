@@ -4,15 +4,16 @@
  
 #### Perbedaan antara JSON, XML, dan HTML
 - JSON <br>
-JSON adalah singkatan dari JavaScript Object Notation. Dari namanya sendiri, pengembangan JSON dilakukan menggunakan bahasa seperti JavaScript, bukan _markup language_ seperti HTML ataupun XML. JSON digunakan untuk merepresentasikan data dalam pasangan _key-value_ yang dapat dikonversi ke atau dari JavaScript secara mudah. JSON juga secara umum lebih cepat dan mudah daripada XML
+JSON adalah singkatan dari JavaScript Object Notation. Dari namanya sendiri, pengembangan JSON dilakukan menggunakan bahasa seperti JavaScript, bukan _markup language_ seperti HTML ataupun XML. JSON digunakan untuk merepresentasikan data dalam pasangan _key-value_ yang dapat dikonversi ke atau dari JavaScript secara mudah dengan fungsi JavaScript standar. Datanya bisa langsung diakses sebagai objek JSON dan didukung sebagian besar _browser_. JSON secara umum lebih cepat dan mudah digunakan daripada XML. Walaupun berkas JSON hanya bisa dalam UTF-8 encoding, berkas JSON lebih mudah dibaca, tetapi keamanannya kurang daripada XML.
 
 - HTML <br>
-HTML: HyperText Markup Language. The markup (formatting) language for the web.
+HTML adalah singkatan dari HyperText Markup Language. Sesuai namanya, HTML merupakan kombinasi dari hypertext, yaitu yang mendefinisikan link di antara _web pages_, dan markup language yang mendfinisikan struktur teks pada _web pages_ agar di-_render_ dengan baik di _web browsers_. HTML termasuk _format driven static language_. HTML adalah suatu bahasa tersendiri yang digunakan untuk membangun struktur teks. HTML berfokus pada representasi data dan tidak melakukan transfer data. Dalam pengkodeannya, HTML tidak _case sensitive_, tidak bisa menggunakan _white spaces_, menggunakan _tags_ yang sudah ditentukan untuk menampilkan data, dan _closing_-nya tidak harus digunakan. Dokumen berkas HTML relatif kecil karena _syntax_-nya singkat dan dalam format teks.
 
 - XML <br>
-XML: eXtensible Markup Language.
+XML adalah singkatan dari eXtensible Markup Language. XML adalah suatu _content driven dynamic language_ yang menyediakan framework untuk mendefinisikan markup language. XML secara umum digunakan untuk membangun struktur, menyimpan, dan mentransfer format data atau pesan. Data XML harus di-_parse_ terlebih dahulu menggunakan XML parser. Dalam pengkodeannya, XML bersifat _case sensitive_, _tags_ digunakan untuk mendeskripsikan data, bukan untuk menampilkannya, dan _closing tags_ harus digunakan. XML dapat menggunakan beberapa ragam encoding dan lebih aman daripada JSON. Tetapi di samping itu, XML lebih kompleks daripada JSON dan dokumennya cenderung lebih besar. 
 
 #### Alasan diperlukan _data delivery_ dalam pengimplementasian sebuah platform
+Pengimplementasian suatu platform terkadang perlu mengirimkan data dari satu _stack_ ke _stack_ lainnya. Untuk menghemat kapasitas, ada berkas data yang tidak disimpan di server, tetapi di-_generate_ oleh kode program. _Data delivery_ akan membantu mengurangi kompleksitas pengembangan platform, terutama dalam hal efisiensi waktu. Di sisi lain, akurasi dan _user experience_ akan semakin baik. Implementasi _data delivery_ juga akan meningkatkan keamanan serta kualitas pemrosesan dan penyimpanan data.
 
 #### Implementasi
 
@@ -47,3 +48,11 @@ Setelah `add`, `commit`, dan `push` perubahan yang dilakukan ke github, membuat 
 HEROKU_API_KEY: <VALUE_API_KEY> dan <br>
 HEROKU_APP_NAME: <NAMA_APLIKASI_HEROKU>, dalam hal ini adalah `pbp-assignment` <br>
 _Deployment_ akan berhasil dilakukan setelah _workflow_ yang gagal dijalankan kembali.
+
+#### Postman
+- HTML
+![HTML](https://github.com/rahmaadnda/tugas-pbp/blob/main/Tugas%203%20-%20HTML%20Postman.jpg)
+- XML
+![XML](https://github.com/rahmaadnda/tugas-pbp/blob/main/Tugas%203%20-%20XML%20Postman.jpg)
+- JSON
+![JSON](https://github.com/rahmaadnda/tugas-pbp/blob/main/Tugas%203%20-%20JSON%20Postman.jpg)
