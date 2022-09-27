@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+<title>Create Task</title>
+{% endblock meta %}
+
+{% block content %}
+
+<div class = "add task">
+
+    <h1>Create A New Task Form</h1>
+
+    <form method="POST" action="">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>Title: {{ input_form.as_p}}</td>
+                <td><input type="text" name="title" ></td>
+            </tr>
+                    
+            <tr>
+                <td>Description: {{ input_form.as_p}}</td>
+                <td><input type="text" name="description"></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Create"></td>
+            </tr>
+        </table>
+    </form>
+
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}     
+
+</div>
+
+{% endblock content %}

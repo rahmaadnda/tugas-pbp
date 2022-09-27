@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+ {% block content %}
+
+  <h1>To-Do List</h1>
+
+  <h3>Username: {{task_user}}</h3>
+
+  <table>
+    <tr>
+      <th>Date</th>
+      <th>Task</th>
+      <th>Description</th>
+    </tr>
+
+    {% for task in list_task %}
+        <tr>
+            <th>{{task.date}}</th>
+            <th>{{task.title}}</th>
+            <th>{{task.description}}</th>
+        </tr>
+    {% endfor %}
+
+  </table>
+
+  <button style="margin:20px;"><a href="{% url 'todolist:create_task' %}">Create a new task</a></button>
+  
+  <button style="margin:20px;"><a href="{% url 'todolist:logout' %}">Logout</a></button>
+
+ {% endblock content %}
