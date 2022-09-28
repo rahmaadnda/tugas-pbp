@@ -8,11 +8,10 @@ Serangan Cross-Site Request Forgery (CSRF) memaksa pengguna untuk mengeksekusi s
 CSRF adalah serangan yang umum sehingga Django memiliki solusi yang singkat untuk menghindarinya, yaitu dengan menggunakan tag `{% csrf_token %}` pada elemen `<form>` terkait. _Tag_ tersebut melakukan _generate_ token yang rahasia, unik, dan tidak bisa diprediksi dari server ketika melakukan _render_. Token ini akan dicek setiap ada request yang masuk. Request tidak akan dijalankan jika tidak memiliki token atau jika _value_-nya berbeda. Dengan ini, keamanan post request dari pengguna ke server akan lebih terjamin. Tidak adanya _tag_ tersebut akan meningkatkan risiko serangan CSRF.
  
 ### Gambaran besar cara membuat elemen `<form>` secara manual
-`{{ form.as_table }}` adalah salah satu built-in methods dari Django, yaitu sebuah generator yang akan melakukan _render_ pada form sebagai tabel. Elemen `<form>` juga bisa di-_render_ tanpa menggunakan generator. Salah satu caranya adalah dengan menggunakan CSS pada berkas HTML. Pengaksesan masing-masing _field_ juga bisa dengan menggunakan atribut `{{ field}}` dan memanfaatkan atribut `{{ form }}`.
+`{{ form.as_table }}` adalah salah satu built-in methods dari Django, yaitu sebuah generator yang akan melakukan _render_ pada form sebagai tabel. Elemen `<form>` juga bisa di-_render_ tanpa menggunakan generator. Salah satu caranya adalah dengan menggunakan CSS pada berkas HTML. Pengaksesan masing-masing _field_ juga bisa dengan menggunakan atribut `{{ field }}` dan memanfaatkan atribut `{{ form }}`.
 
 ### Proses alur data dari submisi yang dilakukan oleh pengguna melalui HTML form, penyimpanan data pada _database_, hingga munculnya data yang telah disimpan pada template HTML.
 Setelah pengguna mengisi form dan melakukan "submit", _browser_ akan melakukan _generate_ terhadap HTTP Request, Method, dan argumennya ke URL tujuan berdasarkan halaman form HTML. Server menerima HTTP request dan menentukan fungsi dari `views.py` yang terpanggil. Fungsi tersebut akan dijalankan, penyimpanan data ke _database_ dilakukan di dalamnya dan fungsi tersebut akan mengembalikan hasil _generate_ halaman HTML untuk ditampilkan di _browser_ dan diteruskan ke pengguna.
-
 
 ### Implementasi
 1. Membuat sebuah proyek Django atau `django-app` bernama `todolist`.
