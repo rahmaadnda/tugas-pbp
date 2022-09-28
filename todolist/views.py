@@ -12,7 +12,7 @@ from todolist.forms import Input_Form
 @login_required(login_url='/todolist/login/')
 # fungsi menampilkan task
 def show_todolist(request):
-    data_task_item = Task.objects.all()
+    data_task_item = Task.objects.filter(user=request.user)
     context = {
         "list_task": data_task_item,
         "task_user" : request.user,
@@ -81,7 +81,7 @@ def create_task(request):
             new_task.save()
             
             # mengembalikan ke halaman yang menampilkan tasks
-            data_task_item = Task.objects.all()
+            data_task_item = Task.objects.filter(user=request.user)
             context = {
                 "list_task": data_task_item,
                 "task_user" : request.user,
