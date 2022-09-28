@@ -16,7 +16,7 @@ def show_todolist(request):
     context = {
         "list_task": data_task_item,
         "task_user" : request.user,
-        'last_login': request.COOKIES['last_login']
+        "last_login": request.COOKIES['last_login']
     }
     return render(request, "todolist.html", context)
 
@@ -84,7 +84,8 @@ def create_task(request):
             data_task_item = Task.objects.all()
             context = {
                 "list_task": data_task_item,
-                "task_user" : request.user
+                "task_user" : request.user,
+                "last_login": request.COOKIES['last_login']  
             }
             return render(request, 'todolist.html', context)  
         else:
