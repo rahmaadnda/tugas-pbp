@@ -33,7 +33,5 @@ Setelah pengguna mengisi form dan melakukan "submit", _browser_ akan melakukan _
 17. Membuat routing untuk memetakan fungsi yang telah dibuat pada `views.py`. Routing dilakukan dari `urls.py`, nantinya halaman HTML dapat ditampilkan melalui _browser_. Isi dari `urls.py` adalah import fungsi dari `views.py`, variabel `app_name` yang berisi nama aplikasi, dan penambahan fungsi ke variabel `urlpatterns`.
 18. Melakukan pendaftaran aplikasi dengan menambahkan path ke dalam `urls.py` yang ada di folder `project_django` pada variabel `urlpatterns`. Routing sudah selesai dan akan terlihat jika projek Django dijalankan.
 19. Melakukan deployment ke Heroku terhadap aplikasi yang sudah dibuat. <br>
-Setelah `add`, `commit`, dan `push` perubahan yang dilakukan ke github, membuat aplikasi baru di Heroku dan menambahkan variabel `repository secret` ke repositori github dengan format: <br>
-HEROKU_API_KEY: <VALUE_API_KEY> dan <br>
-HEROKU_APP_NAME: <NAMA_APLIKASI_HEROKU>, dalam hal ini adalah `pbp-assignment` <br>
+Setelah `add`, `commit`, dan `push` perubahan yang dilakukan ke github, menjalankan _deployment_ ulang.
 20. Menjalankan aplikasi di situs web Heroku dan membuat dua akun pengguna, tiga _dummy_ data pada akun masing-masing.
