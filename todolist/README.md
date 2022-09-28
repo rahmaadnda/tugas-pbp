@@ -2,21 +2,22 @@
 --> [To-Do List](https://pbp-assignment.herokuapp.com/todolist/)
  <hr>
 
-#### Kegunaan `{% csrf_token %}` pada elemen `<form>`.
+### Kegunaan `{% csrf_token %}` pada elemen `<form>`.
 Serangan Cross-Site Request Forgery (CSRF) memaksa pengguna untuk mengeksekusi sesuatu yang tidak diinginkan di dalam sebuah aplikasi web. Penyerang memanfaatkan pengguna yang telah terautentikasi dengan mengganti request dari pengguna sehingga aksi yang dilakukan tidak sesuai dengan keinginan mereka. Penyerangan yang terjadi pada akun admin dapat membahayakan web aplikasi secara keseluruhan.
  
 CSRF adalah serangan yang umum sehingga Django memiliki solusi yang singkat untuk menghindarinya, yaitu dengan menggunakan tag `{% csrf_token %}` pada elemen `<form>` terkait. _Tag_ tersebut melakukan _generate_ token yang rahasia, unik, dan tidak bisa diprediksi dari server ketika melakukan _render_. Token ini akan dicek setiap ada request yang masuk. Request tidak akan dijalankan jika tidak memiliki token atau jika _value_-nya berbeda. Dengan ini, keamanan post request dari pengguna ke server akan lebih terjamin. Tidak adanya _tag_ tersebut akan meningkatkan risiko serangan CSRF.
  
-#### Gambaran besar cara membuat elemen `<form>` secara manual. Apakah kita dapat membuat elemen `<form>` secara manual (tanpa menggunakan generator seperti `{{ form.as_table }}`)?
+### Gambaran besar cara membuat elemen `<form>` secara manual
+`{{ form.as_table }}` adalah salah satu built-in methods dari Django, yaitu sebuah generator yang akan melakukan _render_ pada form sebagai tabel. Elemen `<form>` juga bisa di-_render_ tanpa menggunakan generator. Salah satu caranya adalah dengan menggunakan CSS pada berkas HTML. Pengaksesan masing-masing _field_ juga bisa dengan menggunakan atribut `{{ field}}` dan memanfaatkan atribut `{{ form }}`.
+
+### Proses alur data dari submisi yang dilakukan oleh pengguna melalui HTML form, penyimpanan data pada _database_, hingga munculnya data yang telah disimpan pada template HTML.
+Setelah pengguna mengisi form dan melakukan "submit", _browser_ akan melakukan _generate_ terhadap HTTP Request, Method, dan argumennya ke URL tujuan berdasarkan halaman form HTML. Server menerima HTTP request dan menentukan fungsi dari `views.py` yang terpanggil. Fungsi tersebut akan dijalankan, penyimpanan data ke _database_ dilakukan di dalamnya dan fungsi tersebut akan mengembalikan hasil _generate_ halaman HTML untuk ditampilkan di _browser_ dan diteruskan ke pengguna.
 
 
-#### Proses alur data dari submisi yang dilakukan oleh pengguna melalui HTML form, penyimpanan data pada database, hingga munculnya data yang telah disimpan pada template HTML.
-
-
-#### Implementasi
+### Implementasi
 1. Membuat sebuah proyek Django atau `django-app` bernama `todolist`.
 2. Mendaftarkan `django-app` dengan menambahkan aplikasi `todolist` ke dalam variabel `INSTALLED_APPS` pada berkas `settings.py`
-3. Membuat berkas `models.py` di folder `todolist` berisi model `Task` dengan variabel atau atribut dan field yang sesuai.
+3. Membuat berkas `models.py` di folder `todolist` berisi model `Task` dengan variabel atau atribut dan yang sesuai.
 4. Membuat berkas `forms.py` di folder `todolist` untuk menyimpan atribut dari form.
 5. Menerapkan skema model yang telah dibuat ke dalam _database_ Django lokal (melakukan migrate).
 6. Melakukan import models yang sudah dibuat sebelumnya ke dalam berkas `views.py`. Class tersebut akan digunakan untuk melakukan pengambilan data dari database. 
