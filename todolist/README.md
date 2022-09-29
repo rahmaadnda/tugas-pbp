@@ -1,5 +1,7 @@
 [Aplikasi Heroku](https://pbp-assignment.herokuapp.com/) <br>
---> [To-Do List](https://pbp-assignment.herokuapp.com/todolist/)
+--> [To-Do List](https://pbp-assignment.herokuapp.com/todolist/) <br>
+akun 1 -> username: rahma             password: inipassword <br>
+akun 2 -> username: userbaru          password: katasandi <br>
  <hr>
 
 ### Kegunaan `{% csrf_token %}` pada elemen `<form>`.
