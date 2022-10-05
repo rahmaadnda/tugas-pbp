@@ -4,6 +4,7 @@ akun 1 -> username: rahma             password: inipassword <br>
 akun 2 -> username: userbaru          password: katasandi <br>
  <hr>
 
+## Tugas 4
 ### Kegunaan `{% csrf_token %}` pada elemen `<form>`.
 Serangan Cross-Site Request Forgery (CSRF) memaksa pengguna untuk mengeksekusi sesuatu yang tidak diinginkan di dalam sebuah aplikasi web. Penyerang memanfaatkan pengguna yang telah terautentikasi dengan mengganti request dari pengguna sehingga aksi yang dilakukan tidak sesuai dengan keinginan mereka. Penyerangan yang terjadi pada akun admin dapat membahayakan web aplikasi secara keseluruhan.
  
@@ -37,3 +38,48 @@ Setelah pengguna mengisi form dan melakukan "submit", _browser_ akan melakukan _
 19. Melakukan deployment ke Heroku terhadap aplikasi yang sudah dibuat. <br>
 Setelah `add`, `commit`, dan `push` perubahan yang dilakukan ke github, menjalankan _deployment_ ulang.
 20. Menjalankan aplikasi di situs web Heroku dan membuat dua akun pengguna, tiga _dummy_ data pada akun masing-masing.
+
+
+## Tugas 5
+### Perbedaan, kelebihan, dan kekurangan dari Inline, Internal, dan External CSS.
+- Inline CSS
+Pendefinisian properti CSS ada di bagian body, menyatu dengan elemennya. Lebih spesifiknya, pendefinisian dilakukan dalam HTML _tag_-nya menggunakan atribut style. Kelebihannya adalah CSS dapat diterapkan dengan cepat, hal ini berpengaruh jika melakukan tes atau _preview_. Kelemahannya, penambahan CSS ke dalam setiap HTML memerlukan waktu dan terkadang membuat struktur dokumen menjadi kurang terorganisir. Inline style CSS tidak bisa menggunakan elemen atau kelas _pseudo_. Di samping itu, inline style merupakan prioritas utama penerapan CSS.
+- Internal CSS
+Pendefinisian properti CSS dilakukan di bagian head. Jenis ini umumnya lebih efektif ketika digunakan untuk memodifikasi satu dokumen HTML, tidak perlu ada berkas tambahan. Kekurangannya adalah ketika ingin memodikasi beberapa dokumen, penerapan CSS perlu dilakukan berulang kali. Selain itu, penambahan kode pada beberapa dokumen HTML akan meningkatkan ukuran halamannya sehingga waktu pemuatannya juga akan jadi lebih lama.
+- External CSS
+Pendefinisian properti CSS menggunakan berkas terpisah. Berkas tersebut menggunakan ekstensi .css dan hanya berisi style dari _tag_ atribut yang dimiliki HTML terkait. Berkas ini perlu dihubungkan dengan berkas HTML-nya menggunakan tag `link`. Untuk memodifikasi situs besar, cara ini akan lebih efektif karena modifikasi satu berkas .css akan diterapkan pada seluruh halaman web. Berkas HTML juga akan menjadi lebih bersih dengan ukuran yang lebih kecil. Kekurangannya adalah karena perlu mengunggah berkas terpisah, ada kemungkinan halaman web tidak ter-_render_ dengan benar sampai berkas eksternal CSS terbaca.
+
+### Tag HTML5
+- `<!--...-->`: menspesifikasi suatu komentar
+- `<!DOCTYPE>`: menspesifikasi tipe dokumen 
+- `<a>`: mendefinisikan suatu _hyperlink_ 
+- `<body>`: menspesifikasi bagian body dari dokumen 
+- `<button>`: membuat button yang interaktif
+- `<div>`: menspesifikasi suatu bagian dari dokumen 
+- `<form>`: mendefinisikan HTML form untuk input user
+- `<head>`:	mendefinisikan bagian head yang berisi informasi dokumen
+- `<h1>` sampai `<h6>`: mendefinisikan header (1 sampai 6)
+- `<hr>`: membuat garis horizontal
+- `<html>`: menspesifikasi root dari dokumen HTML
+- `<input>`: mendefinisikan kontrol input
+- `<label>`: mendefinisikan label untuk suatu kontrol input 
+- `<li>`: mendefinisikan item dari list.
+- `<p>`: mendefinisikan suatu paragraf 
+- `<style>` : mendefinisikan informasi style, biasanya untuk CSS
+- `<table>`: menspesifikasi suatu tabel
+- `<td>`: menspesifikasi sel dari suatu tabel
+- `<th>`: menspesifikasi header sel dari suatu tabel
+- `<title>`: mendefinisikan judul dokumen
+- `<tr>`: mendefinisikan baris dari tabel
+- `<ul>`: mendefinisikan list yang tidak terurut
+
+### Tipe CSS selector
+- Universal selector: memilih semua elemen (tapi bisa dispesikasi, contohnya menggunakan `*|*`)
+- Element selector: memilih semua elemen `<p>`
+- ID selector: memilih semua elemen yang memiliki suatu id tertentu
+- Class selector: memilih semua elemen dari class
+- Attribute selector: memilih semua elemen yang memiliki suatu atribut tertentu
+- `:` pseudo: memilih elemen berdasarkan status informasi yang tidak ada di document tree
+- `::` pseudo: memilih entitas yang tidak termasuk dalam HTML
+
+### Implementasi
