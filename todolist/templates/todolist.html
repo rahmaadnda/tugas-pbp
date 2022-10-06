@@ -1,32 +1,44 @@
-{% extends 'base.html' %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
- {% block content %}
+    {% block meta %}
+    <title>To-Do List</title>
+    {% endblock meta %}  
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <style>
+    </style>
+  </head>
+</html>
 
-  <h1>To-Do List</h1>
+{% block content %}
 
-  <h3>Username: {{task_user}}</h3>
-
-  <table>
-    <tr>
-      <th>Date</th>
-      <th>Task</th>
-      <th>Description</th>
-    </tr>
+<div class = "add task" align="center" style="margin-top:20px">
+  <h2>To-Do List</h2>
+  <h4>Username: {{task_user}}</h4>
 
     {% for task in list_task %}
-        <tr>
-            <th>{{task.date}}</th>
-            <th>{{task.title}}</th>
-            <th>{{task.description}}</th>
-        </tr>
+
+    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+      <div class="card-header">
+        {{task.date}}
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{task.title}}</h5>
+        <p class="card-text">{{task.description}}.</p>
+      </div>
+    </div>
     {% endfor %}
 
-  </table>
 
-  <h5>Sesi terakhir login: {{last_login}}</h5>
+  <p>Sesi terakhir login: {{last_login}}</p>
 
-  <button style="margin:20px;"><a href="{% url 'todolist:create_task' %}">Create a new task</a></button>
-  
-  <button style="margin:20px;"><a href="{% url 'todolist:logout' %}">Logout</a></button>
+  <button class="btn" style="margin:10px;"><a style="text-decoration:none"  href="{% url 'todolist:create_task' %}">Create a new task</a></button>
 
- {% endblock content %}
+  <button class="btn" style="margin:10px;"><a style="text-decoration:none" href="{% url 'todolist:logout' %}">Logout</a></button>
+
+</div>
+{% endblock content %}
