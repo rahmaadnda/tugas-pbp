@@ -16,13 +16,13 @@
 
 {% block content %}
 
-<div class = "add task" align="center" style="margin-top:20px">
+<div class = "add task" align="center" style="margin-top:3%" max-width:"100%" width="50%">
   <h2>To-Do List</h2>
   <h4>Username: {{task_user}}</h4>
 
     {% for task in list_task %}
 
-    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+    <div class="card text-primary mb-3" style="max-width: 18rem;">
       <div class="card-header">
         {{task.date}}
       </div>
@@ -36,9 +36,9 @@
 
   <p>Sesi terakhir login: {{last_login}}</p>
 
-  <button class="btn" style="margin:10px;"><a style="text-decoration:none"  href="{% url 'todolist:create_task' %}">Create a new task</a></button>
+  <button class="btn" style="margin:1%;"><a style="text-decoration:none"  href="{% url 'todolist:create_task' %}">Create a new task</a></button>
 
-  <button class="btn" style="margin:10px;"><a style="text-decoration:none" href="{% url 'todolist:logout' %}">Logout</a></button>
+  <button class="btn" style="margin:1%;"><a style="text-decoration:none" href="{% url 'todolist:logout' %}">Logout</a></button>
 
 </div>
 {% endblock content %}
