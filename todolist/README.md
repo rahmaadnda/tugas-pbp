@@ -42,12 +42,12 @@ Setelah `add`, `commit`, dan `push` perubahan yang dilakukan ke github, menjalan
 
 ## Tugas 5
 ### Perbedaan, kelebihan, dan kekurangan dari Inline, Internal, dan External CSS.
-- Inline CSS
+- Inline CSS <br>
 Pendefinisian properti CSS ada di bagian body, menyatu dengan elemennya. Lebih spesifiknya, pendefinisian dilakukan dalam HTML _tag_-nya menggunakan atribut style. Kelebihannya adalah CSS dapat diterapkan dengan cepat, hal ini berpengaruh jika melakukan tes atau _preview_. Kelemahannya, penambahan CSS ke dalam setiap HTML memerlukan waktu dan terkadang membuat struktur dokumen menjadi kurang terorganisir. Inline style CSS tidak bisa menggunakan elemen atau kelas _pseudo_. Di samping itu, inline style merupakan prioritas utama penerapan CSS.
-- Internal CSS
-Pendefinisian properti CSS dilakukan di bagian head. Jenis ini umumnya lebih efektif ketika digunakan untuk memodifikasi satu dokumen HTML, tidak perlu ada berkas tambahan. Kekurangannya adalah ketika ingin memodikasi beberapa dokumen, penerapan CSS perlu dilakukan berulang kali. Selain itu, penambahan kode pada beberapa dokumen HTML akan meningkatkan ukuran halamannya sehingga waktu pemuatannya juga akan jadi lebih lama.
-- External CSS
-Pendefinisian properti CSS menggunakan berkas terpisah. Berkas tersebut menggunakan ekstensi .css dan hanya berisi style dari _tag_ atribut yang dimiliki HTML terkait. Berkas ini perlu dihubungkan dengan berkas HTML-nya menggunakan tag `link`. Untuk memodifikasi situs besar, cara ini akan lebih efektif karena modifikasi satu berkas .css akan diterapkan pada seluruh halaman web. Berkas HTML juga akan menjadi lebih bersih dengan ukuran yang lebih kecil. Kekurangannya adalah karena perlu mengunggah berkas terpisah, ada kemungkinan halaman web tidak ter-_render_ dengan benar sampai berkas eksternal CSS terbaca.
+- Internal CSS <br>
+Pendefinisian properti CSS dilakukan di bagian head. Jenis ini umumnya lebih efektif ketika digunakan untuk memodifikasi satu dokumen HTML, tidak perlu ada berkas tambahan. Kekurangannya adalah ketika ingin memodikasi beberapa dokumen, penerapan CSS perlu dilakukan berulang kali. Selain itu, penambahan kode pada beberapa dokumen HTML akan meningkatkan ukuran halamannya sehingga waktu pemuatannya juga akan menjadi lebih lama.
+- External CSS <br>
+Pendefinisian properti CSS menggunakan berkas terpisah. Berkas tersebut menggunakan ekstensi .css dan hanya berisi style dari _tag_ atribut yang dimiliki HTML terkait. Berkas ini perlu dihubungkan dengan berkas HTML-nya menggunakan tag `link`. Untuk memodifikasi situs besar, cara ini akan lebih efektif karena modifikasi satu berkas .css akan diterapkan pada seluruh halaman web. Berkas HTML juga akan menjadi lebih bersih dengan ukuran yang lebih kecil. Kekurangannya adalah karena perlu mengunggah berkas terpisah, ada kemungkinan halaman web tidak ter-_render_ dengan benar sampai berkas eksternal CSS selesai terbaca.
 
 ### Tag HTML5
 - `<!--...-->`: menspesifikasi suatu komentar
