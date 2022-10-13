@@ -59,17 +59,17 @@
 
         $(document).on('submit', '#addTask',function(e){
           $.ajax({
-              method:'POST',
-              url:'{% url "todolist:add_todolist_item" %}',
-              data:{
-                action: 'post',
-                title:$("#title").val(),
-                description:$("#description").val(),
-                csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
-              },
-              success:function(json){
-                document.getElementById("#addTask").reset();
-              }
+            type:'POST',
+            url:'{% url "todolist:add_todolist_item" %}',
+            data:{
+                title:$('#title').val(),
+                description:$('#description').val(),
+                csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+                action: 'post'
+            },
+            success:function(json){
+              document.getElementById("#addTask").reset();
+            },
           });
         });
 
