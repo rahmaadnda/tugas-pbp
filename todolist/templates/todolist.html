@@ -62,10 +62,8 @@
               method:'POST',
               url:'{% url "todolist:add_todolist_item" %}',
               data:{
-                title:$("#title").val(),
-                description:$("#description").val(),
-                csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
                 action:'post',
+                csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
               },
               success:function(json){
                 document.getElementById("#addTask").reset();
