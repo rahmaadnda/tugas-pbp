@@ -1,5 +1,6 @@
 import datetime
-from django.http import HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, HttpResponseNotFound
+from django.core import serializers
 from django.urls import reverse
 from django.shortcuts import render, redirect
 from django.contrib import messages
@@ -14,11 +15,24 @@ from todolist.forms import Input_Form
 def show_todolist(request):
     data_task_item = Task.objects.filter(user=request.user)
     context = {
-        "list_task": data_task_item,
+         # "list_task": data_task_item,
         "task_user" : request.user,
         "last_login": request.COOKIES['last_login']
     }
     return render(request, "todolist.html", context)
+
+# fungsi menampilkan task menggunakan ajax
+def show_todolist_json(request):
+    context = {
+        "task_user" : request.user,
+        "last_login": request.COOKIES['last_login']
+    }
+    return render(request, "todolist.html", context)
+
+# fungsi menampilkan task dalam bentuk JSON
+def show_json(request):
+    data = Task.objects.filter(user=request.user)
+    return HttpResponse(serializers.serialize('json', data))
 
 # fungsi mendaftarkan pengguna
 def register(request):
@@ -92,3 +106,22 @@ def create_task(request):
             task_form = Input_Form()
             messages.info(request, 'Fill out all fields to proceed')
     return render(request, 'create-task.html')  
+
+def add_todolist_item(request):
+    if request.method == 'POST':
+        task_user = request.user
+        task_date = datetime.date.today()
+        title = request.POST.get('title')
+        description = request.POST.get('description')
+        
+        # membuat objek baru berdasarkan model dan menyimpannya ke database
+        new_task = Task(user=task_user, date=task_date.strftime("%Y-%m-%d"), title=title, description=description)
+        new_task.save()
+        
+        context = {
+            "task_user" : request.user,
+            "last_login": request.COOKIES['last_login']  
+        }
+        return render(request, 'todolist.html', context) 
+
+    return render(request, 'todolist.html')

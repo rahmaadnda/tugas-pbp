@@ -9,36 +9,110 @@
     {% endblock meta %}  
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <style>
-    </style>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
   </head>
-</html>
 
-{% block content %}
+  <body>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-<div class = "add task" align="center" style="margin-top:3%" max-width:"100%" width="50%">
-  <h2>To-Do List</h2>
-  <h4>Username: {{task_user}}</h4>
+    {% block content %}
 
-    {% for task in list_task %}
-
-    <div class="card text-primary mb-3" style="max-width: 18rem;">
-      <div class="card-header">
-        {{task.date}}
+    <div class = "add task" align="center" style="margin-top:3%" max-width:"100%" width="50%">
+      <h2>To-Do List</h2>
+      <h4>Username: {{task_user}}</h4>
+      
+      <div class="card-deck" id="deck" max-width:"100%" width="50%">
       </div>
-      <div class="card-body">
-        <h5 class="card-title">{{task.title}}</h5>
-        <p class="card-text">{{task.description}}.</p>
+
+      <script>
+        $(document).ready(function () {
+    
+          // FETCHING DATA FROM JSON
+          $.getJSON("{%url 'todolist:show_json'%}", function (data) {
+            
+            // ITERATING THROUGH OBJECTS
+            $.each(data, function (key, value) {
+              var task = '';
+
+              task += '<div class="card text-primary mb-3" style="max-width: 18rem" id="card">';
+              task += '<div class="card-header" id="header">';
+              task += value.fields.date;
+              task += '</div>';
+              task += '<div class="card-body" id="body">';
+              task += '<h5 class="card-title" id="title">'
+              task += value.fields.title;
+              task += '</h5>';
+              task += '<p class="card-text" id="desc">';
+              task += value.fields.description;
+              task += '</p>';
+              task += '</div>';
+              task += '</div>';
+      
+              $("#deck").append(task);
+            });
+          });
+        });
+
+        $(document).on('submit', '#addTask',function(e){
+          $.ajax({
+              method:'POST',
+              url:'{% url "todolist:add_todolist_item" %}',
+              data:{
+                action: 'post',
+                title:$("#title").val(),
+                description:$("#description").val(),
+                csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+              },
+              success:function(json){
+                document.getElementById("#addTask").reset();
+              }
+          });
+      });
+
+      </script>
+
+      <p>Sesi terakhir login: {{last_login}}</p>
+
+      <button class="btn" style="margin:1%;"><a style="text-decoration:none" href="{% url 'todolist:create_task' %}">Create a new task</a></button>
+
+      <button type="button" class="btn" style="margin:1%;" data-toggle="modal" data-target="#addModal"><a style="text-decoration:none">Add task</a></button>
+      
+      <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="addModalLabel">Add Task</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form method="POST" id="addTask">
+                {% csrf_token %}
+                <div class="mb-3">
+                  <label class="col-form-label" align="center">Title: </label>
+                  <input type="text" class="form-control" placeholder="Title" name="title" id="title">
+                </div>
+                <div class="mb-3">
+                  <label class="col-form-label" align="center">Description: </label>
+                  <textarea class="form-control" placeholder="Description" name="description" id="description"></textarea>
+                </div>
+                <div class="mb-3">
+                  <input class="btn btn-primary" style="margin-top:3%" type="submit" value="Add">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
+      <button class="btn" style="margin:1%;"><a style="text-decoration:none" href="{% url 'todolist:logout' %}">Logout</a></button>
     </div>
-    {% endfor %}
 
+    {% endblock content %}
 
-  <p>Sesi terakhir login: {{last_login}}</p>
-
-  <button class="btn" style="margin:1%;"><a style="text-decoration:none"  href="{% url 'todolist:create_task' %}">Create a new task</a></button>
-
-  <button class="btn" style="margin:1%;"><a style="text-decoration:none" href="{% url 'todolist:logout' %}">Logout</a></button>
-
-</div>
-{% endblock content %}
+  </body>
+</html>

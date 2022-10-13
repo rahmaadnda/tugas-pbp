@@ -23,17 +23,17 @@
     <form method="POST" action="">
       {% csrf_token %}
       <div class="form-row align-items-center">
-          <div class="col-sm-2">
-            <label class="col-form-label" align="center">Title: </label>
-            <td><input type="text" class="form-control" placeholder="Title" name="title"></td>
-          </div>
-          <div class="col-sm-2" style="margin-bottom:15px" >
-            <label class="col-form-label" align="center">Description: </label>
-            <td><textarea class="form-control" placeholder="Description" name="description"></textarea></td>
-          </div>
+        <div class="col-sm-2">
+          <label class="col-form-label" align="center">Title: </label>
+          <td><input type="text" class="form-control" placeholder="Title" name="title"></td>
+        </div>
+        <div class="col-sm-2" style="margin-bottom:15px" >
+          <label class="col-form-label" align="center">Description: </label>
+          <td><textarea class="form-control" placeholder="Description" name="description"></textarea></td>
+        </div>
 
-          <td></td>
-          <td><input class="btn btn-outline-primary" style="margin-bottom:8px" type="submit" value="Create"></td>
+        <td></td>
+        <td><input class="btn btn-outline-primary" style="margin-bottom:8px" type="submit" value="Create"></td>
           
       </div>
     </form>
