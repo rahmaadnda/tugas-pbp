@@ -30,10 +30,10 @@
 
       <script>
         $(document).ready(function () {
-    
+
           // FETCHING DATA FROM JSON
           $.getJSON("{%url 'todolist:show_json'%}", function (data) {
-            
+
             // ITERATING THROUGH OBJECTS
             $.each(data, function (key, value) {
               var task = '';
@@ -51,7 +51,7 @@
               task += '</p>';
               task += '</div>';
               task += '</div>';
-      
+
               $("#deck").append(task);
             });
           });
@@ -71,8 +71,7 @@
                 document.getElementById("#addTask").reset();
               }
           });
-      });
-
+        });
       </script>
 
       <p>Sesi terakhir login: {{last_login}}</p>
