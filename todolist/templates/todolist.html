@@ -63,6 +63,8 @@
               url:'{% url "todolist:add_todolist_item" %}',
               data:{
                 action:'post',
+                title:$("#title").val(),
+                description:$("#description").val(),
                 csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
               },
               success:function(json){
