@@ -83,7 +83,7 @@ Pendefinisian properti CSS menggunakan berkas terpisah. Berkas tersebut mengguna
 - `::` pseudo: memilih entitas yang tidak termasuk dalam HTML
 
 ### Implementasi
-1. Menambahkan deskripsi masing-masing dokumen HTML, menambahkan CSS bootstrap
+1. Menambahkan deskripsi masing-masing dokumen HTML, menambahkan CSS bootstrap.
 2. Menambahkan properti CSS untuk masing-masing halaman sesuai kegunaannya.
-3. Kostumisasi halaman utama todolist menggunakan CSS cards
-4. Membuat keempat halaman yang dikustomisasi menjadi responsive dengan menambahkan beberapa atribut pada elemen-elemen utama.
+3. Kostumisasi halaman utama todolist menggunakan CSS cards.
+4. Membuat keempat halaman yang dikustomisasi menjadi responsive dengan memodifikasi beberapa atribut pada elemen-elemen utama.
