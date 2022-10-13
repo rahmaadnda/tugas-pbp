@@ -17,13 +17,14 @@ Karena AJAX tidak bergantung pada server, lingkungannya lebih ke arah _data-driv
 ### Implementasi
 ##### Mengubah tugas 4 yang telah dibuat sebelumnya menjadi menggunakan AJAX.
 - AJAX GET
-1. Buatlah view baru yang mengembalikan seluruh data task dalam bentuk JSON.
-2. Buatlah path /todolist/json yang mengarah ke view yang baru kamu buat.
-3. Lakukan pengambilan task menggunakan AJAX GET.
+1. Membuat fungsi baru bernama `show_json` yang menerima parameter request dan mengembalikan seluruh data task user dalam bentuk JSON.
+2. Membuat path `todolist/json` pada `urls.py` yang mengarah pada fungsi `show_json`.
+3. Buatlah path /todolist/json yang mengarah ke view yang baru kamu buat.
+4. Lakukan pengambilan task menggunakan AJAX GET.
 - AJAX POST
-1. Buatlah sebuah tombol `Add Task` yang membuka sebuah modal dengan form untuk menambahkan task.
-2. Buatlah view baru untuk menambahkan task baru ke dalam database.
-3. Buatlah path `/todolist/add` yang mengarah ke view yang baru kamu buat.
-4. Hubungkan form yang telah kamu buat di dalam modal kamu ke path `/todolist/add`
-5. Tutup modal setelah penambahan task telah berhasil dilakukan.
-6. Lakukan refresh pada halaman utama secara asinkronus untuk menampilkan list terbaru tanpa reload seluruh page.
+5. Buatlah sebuah tombol `Add Task` yang membuka sebuah modal dengan form untuk menambahkan task.
+6. Buatlah view baru untuk menambahkan task baru ke dalam database.
+7. Buatlah path `/todolist/add` yang mengarah ke view yang baru kamu buat.
+8. Hubungkan form yang telah kamu buat di dalam modal kamu ke path `/todolist/add`
+9. Tutup modal setelah penambahan task telah berhasil dilakukan.
+10. Lakukan refresh pada halaman utama secara asinkronus untuk menampilkan list terbaru tanpa reload seluruh page.
