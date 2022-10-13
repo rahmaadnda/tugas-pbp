@@ -13,6 +13,4 @@ urlpatterns = [
     path('logout/', logout_user, name='logout'),
     path('json/', show_json, name='show_json'),
     path('add/', add_todolist_item, name='add_todolist_item'),
-    # path('', show_todolist_json, name='show_todolist_json'),
-    
 ]
